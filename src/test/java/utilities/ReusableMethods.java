@@ -1,11 +1,8 @@
-package UITest.Utilities;
+package utilities;
 
-import UITest.pages.AllElements;
 import com.github.javafaker.Faker;
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -19,9 +16,8 @@ import java.util.List;
 
 public class ReusableMethods {
 
-    protected AllElements elements = new AllElements();
+    // protected AllElements elements = new AllElements();
     protected Faker faker = new Faker();
-
 
 
     public static String addDays(LocalDate date, int days) {
@@ -34,9 +30,9 @@ public class ReusableMethods {
 
         //create instance of the Calendar class and set the date to the given date
         Calendar cal = Calendar.getInstance();
-        try{
+        try {
             cal.setTime(sdf.parse(dateBefore));
-        }catch(ParseException e){
+        } catch (ParseException e) {
             e.printStackTrace();
         }
 
@@ -45,21 +41,11 @@ public class ReusableMethods {
         String dateAfter = sdf.format(cal.getTime());
         return dateAfter;
     }
+
     public static String getScreenshot(String name) throws IOException {
         // naming the screenshot with the current date to avoid duplication
         String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
-
-        // TakesScreenshot is an interface of selenium that takes the screenshot
-        TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
-        File source = ts.getScreenshotAs(OutputType.FILE);
-        // full path to the screenshot location
-        String target = System.getProperty("user.dir") + "/test-output/Screenshots/" + name + date + ".png";
-
-        File finalDestination = new File(target);
-        // save the screenshot to the path given
-        FileUtils.copyFile(source, finalDestination);
-
-        return target;
+        return date;
     }
 
 
@@ -74,6 +60,7 @@ public class ReusableMethods {
         }
         Driver.getDriver().switchTo().window(origin);
     }
+
     //========Hover Over=====//
     public static void hover(WebElement element) {
         Actions actions = new Actions(Driver.getDriver());
@@ -114,35 +101,35 @@ public class ReusableMethods {
     }
 
 
-
-
-
     public static void clickWithJS(WebElement element) {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
     }
 
     //login
-    public static void login(String username, String password){
+    public static void login(String username, String password) {
 
         Driver.getDriver().findElement(By.cssSelector("[href='/api/login']")).click();
         Driver.getDriver().findElement(By.xpath("//input[@type='email']")).sendKeys(username);
         Driver.getDriver().findElement(By.xpath("//input[@type='password']")).sendKeys(password);
         Driver.getDriver().findElement(By.xpath("//button[@type='submit']")).click();
     }
-   // logout
-    public static void logout(){
-        Driver.getDriver().findElement(By.cssSelector("[href='/api/logout']")).click();
+
+    // logout
+    public static void logout() {
+        // Driver.getDriver().findElement(By.cssSelector("[href='/api/logout']")).click();
     }
+
     //this method will clear text box
     public static void cleanTextInBox(WebElement element) {
         String inputText = element.getAttribute("value");
-        if( inputText != null ) {
-            for(int i=0; i<inputText.length();i++) {
+        if (inputText != null) {
+            for (int i = 0; i < inputText.length(); i++) {
                 element.sendKeys(Keys.BACK_SPACE);
             }
         }
     }
+
     //Scrolls down to an element using JavaScript
     public static void scrollIntoView(WebElement element) {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView({block: \"center\",inline: \"center\",behavior: \"smooth\"});", element);
