@@ -8,7 +8,7 @@ public class ConfigReader {
     private static Properties properties = new Properties();
 
     static {
-        try(FileInputStream fileInputStream = new FileInputStream("configuration.properties")){
+        try(FileInputStream fileInputStream = new FileInputStream("config.properties")){
             properties.load(fileInputStream);
         }catch (IOException e){
             e.printStackTrace();
