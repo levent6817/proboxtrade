@@ -14,6 +14,7 @@ public class SignUpPage {
     public WebElement SignUpButton;
 
 
+
 }
 
 
