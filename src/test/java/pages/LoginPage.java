@@ -7,5 +7,7 @@ public class LoginPage {
 
     public LoginPage() {
         PageFactory.initElements(Driver.getDriver(), this);
+
+
     }
 }
