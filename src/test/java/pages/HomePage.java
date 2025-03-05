@@ -16,6 +16,9 @@ public class HomePage {
 
     //LeftSide MenuBar Category Navigation
 
+    @FindBy(xpath = "//a[@href='/sign-up']")
+    public static WebElement SignUpButton;
+
     @FindAll(@FindBy(xpath = "//li[@class='MuiListItem-root MuiListItem-gutters css-19kxtar']"))
     public List<WebElement> categoryMenu;
 

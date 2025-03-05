@@ -13,8 +13,7 @@ public class SignUpPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(xpath = "//a[@href='/sign-up']")
-    public WebElement SignUpButton;
+
 
 
 

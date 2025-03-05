@@ -3,18 +3,14 @@ package stepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.HomePage;
-import pages.SignUpPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-import java.time.Duration;
+
 
 public class US004_SignUpStepdefinitions {
-    SignUpPage signUpPage;
+    HomePage homePage;
 
 
 
@@ -28,8 +24,8 @@ public class US004_SignUpStepdefinitions {
     @Then("click sign-up button")
     public void click_sign_up_button () {
 
-        signUpPage = new SignUpPage();
-        signUpPage.SignUpButton.click();
+        homePage = new HomePage();
+        HomePage.SignUpButton.click();
 
     }
 
