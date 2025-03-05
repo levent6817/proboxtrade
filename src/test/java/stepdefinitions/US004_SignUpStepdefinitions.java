@@ -3,17 +3,25 @@ package stepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.HomePage;
 import pages.SignUpPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
+import java.time.Duration;
+
 public class US004_SignUpStepdefinitions {
     SignUpPage signUpPage;
+
+
 
     @Given("User goes to home page")
     public void user_goes_to_home_page() {
 
-        Driver.getDriver().get(ConfigReader.getProperty("baseUrl"));
+       Driver.getDriver().get(ConfigReader.getProperty("baseUrl"));
 
     }
 
@@ -27,6 +35,8 @@ public class US004_SignUpStepdefinitions {
 
     @When("enter email")
     public void enter_email() {
+
+
 
     }
 
