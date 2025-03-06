@@ -25,7 +25,7 @@ public class US004_SignUpStepdefinitions {
     public void click_sign_up_button () {
 
         homePage = new HomePage();
-        HomePage.SignUpButton.click();
+        HomePage.signUpButton.click();
 
     }
 
