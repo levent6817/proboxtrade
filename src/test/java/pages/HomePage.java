@@ -33,7 +33,7 @@ public class HomePage {
     @FindBy(xpath = "//a[@href='/about']")
     public static WebElement aboutButton;
 
-    @FindBy(xpath = "//a[@href='/sign-up']")
+    @FindBy(xpath = "//p[@class='MuiTypography-root MuiTypography-body1 css-vfv4sj']")
     public static WebElement signUpButton;
 
     @FindBy(xpath = "//input[@class='MuiInputBase-input css-aae3xl']")
@@ -128,6 +128,25 @@ public class HomePage {
     //Best Selling Products
     @FindBy(xpath = "//button[.='View All Products']")
     public WebElement viewAllButton;
+
+
+    //Signup
+    @FindBy(className = "MuiTouchRipple-root css-4mb1j7")
+    public WebElement createAccount;
+
+    @FindBy(id = ":r5l:")
+    public WebElement name;
+
+    @FindBy(id = ":r5m:")
+    public WebElement emailOrPhoneNumber;
+
+    @FindBy(id = ":rba:")
+    public WebElement password;
+
+    @FindBy(className = "MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-1s63ceu")
+    public WebElement signUpWithGoogle;
+
+
 
 
 }

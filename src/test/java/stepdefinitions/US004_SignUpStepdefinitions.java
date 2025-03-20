@@ -15,9 +15,10 @@ public class US004_SignUpStepdefinitions {
 
 
     @Given("User goes to home page")
-    public void user_goes_to_home_page() {
+    public void user_goes_to_home_page() throws InterruptedException {
 
        Driver.getDriver().get(ConfigReader.getProperty("baseUrl"));
+       Thread.sleep(1000);
 
     }
 
