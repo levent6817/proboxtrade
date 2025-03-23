@@ -5,8 +5,8 @@ Feature: Sign Up
 
     Given User goes to home page
     Then click sign-up button
-    When enter name and surname
-    And enter email
+    When enter name
+    And enter email or phone number
     And enter password
     Then click create account
     And the user must be on the dashboard

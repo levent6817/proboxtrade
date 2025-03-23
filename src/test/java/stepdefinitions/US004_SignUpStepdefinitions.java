@@ -3,65 +3,61 @@ package stepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.HomePage;
-import pages.SignUpPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-import java.time.Duration;
 
 
 public class US004_SignUpStepdefinitions {
     HomePage homePage;
-    SignUpPage signUpPage;
-    WebDriverWait wait;
-    WebDriver driver;
+
+
 
     @Given("User goes to home page")
-    public void user_goes_to_home_page()  {
+    public void user_goes_to_home_page() throws InterruptedException {
 
        Driver.getDriver().get(ConfigReader.getProperty("baseUrl"));
-
+       Thread.sleep(1000);
 
     }
 
     @Then("click sign-up button")
-    public void click_sign_up_button ()  {
+    public void click_sign_up_button () throws InterruptedException {
+
         homePage = new HomePage();
-        homePage.signUpButton.click();
-
-    }
-
-    @When("enter name and surname")
-    public void enter_name_and_surname () throws InterruptedException {
-        signUpPage = new SignUpPage();
+        HomePage.signUpButton.click();
         Thread.sleep(1000);
-        signUpPage.name.sendKeys("Jhon Doe");
-    }
-    @When("enter email")
-    public void enter_email() {
-signUpPage = new SignUpPage();
-signUpPage.email.sendKeys("jhon.doe@example.com");
 
+    }
+
+    @When("enter name")
+    public void enter_name() throws InterruptedException {
+
+        homePage.name.sendKeys("Levent");
+        Thread.sleep(1000);
+    }
+
+    @When("enter email or phone number")
+    public void enter_email_or_phone_number() throws InterruptedException {
+
+        homePage.emailOrPhoneNumber.sendKeys("leventb68@gmail.com");
+        Thread.sleep(1000);
 
     }
 
     @When("enter password")
-    public void enter_password () {
-        signUpPage = new SignUpPage();
-        signUpPage.password.sendKeys("jD123456");
+    public void enter_password () throws InterruptedException {
+
+        homePage.password.sendKeys("levent6817");
+        Thread.sleep(1000);
+
     }
 
-
-
     @Then("click create account")
-    public void clickCreateAccount() {
-        signUpPage = new SignUpPage();
-        signUpPage.signUpButton.click();
+    public void click_create_account() {
+
+        homePage.createAccount.click();
 
     }
 
@@ -71,5 +67,6 @@ signUpPage.email.sendKeys("jhon.doe@example.com");
         }
 
 
-}
+
+    }
 

@@ -34,7 +34,7 @@ public class HomePage {
     public  WebElement aboutButton;
 
     @FindBy(xpath = "//*[.='Sign Up']")
-    public  WebElement signUpButton;
+    public static WebElement signUpButton;
 
     @FindBy(xpath = "//input[@class='MuiInputBase-input css-aae3xl']")
     public  WebElement searchBar;
@@ -130,6 +130,20 @@ public class HomePage {
     public WebElement viewAllButton;
 
 
+    //SignUp locators
 
+    @FindBy(id = ":r0:")
+    public WebElement name;
 
+    @FindBy(id = ":r1:")
+    public WebElement emailOrPhoneNumber;
+
+    @FindBy(id = ":r2:")
+    public WebElement password;
+
+    @FindBy(xpath = "//button[.='Create Account']")
+    public  WebElement createAccount;
+
+    @FindBy(xpath = "//button[.='Sign up with Google']")
+    public  WebElement signUpWithGoogle;
 }
