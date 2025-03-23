@@ -16,34 +16,34 @@ public class HomePage {
 
     //Header Navbar Menu
     @FindBy(xpath = "//button[.='ShopNow']")
-    public static WebElement shopNowButton;
+    public  WebElement shopNowButton;
 
     @FindBy(xpath = "//*[.='English']")
-    public static WebElement languageListBox;
+    public  WebElement languageListBox;
 
     @FindBy(xpath = "//a[.='Exclusive']")
-    public static WebElement exclusiveButton;
+    public  WebElement exclusiveButton;
 
-    @FindBy(xpath = "//a[@href='/home']")
-    public static WebElement homeButton;
+    @FindBy(xpath = "//*[.='Home']")
+    public  WebElement homeButton;
 
-    @FindBy(xpath = "//a[@href='/contact']")
-    public static WebElement contactButton;
+    @FindBy(xpath = "//*[.='Contact']")
+    public  WebElement contactButton;
 
-    @FindBy(xpath = "//a[@href='/about']")
-    public static WebElement aboutButton;
+    @FindBy(xpath = "//*[.='About']")
+    public  WebElement aboutButton;
 
-    @FindBy(xpath = "//p[@class='MuiTypography-root MuiTypography-body1 css-vfv4sj']")
-    public static WebElement signUpButton;
+    @FindBy(xpath = "//*[.='Sign Up']")
+    public  WebElement signUpButton;
 
     @FindBy(xpath = "//input[@class='MuiInputBase-input css-aae3xl']")
-    public static WebElement searchBar;
+    public  WebElement searchBar;
 
     @FindBy(xpath = "//*[@data-testid='FavoriteBorderOutlinedIcon']")
-    public static WebElement allFavoriteIcon;
+    public  WebElement allFavoriteIcon;
 
     @FindBy(xpath = "//*[@data-testid='ShoppingCartOutlinedIcon']")
-    public static WebElement shoppingCartIcon;
+    public  WebElement shoppingCartIcon;
 
 
     //LeftSide MenuBar Category Navigation
@@ -128,23 +128,6 @@ public class HomePage {
     //Best Selling Products
     @FindBy(xpath = "//button[.='View All Products']")
     public WebElement viewAllButton;
-
-
-    //Signup
-    @FindBy(className = "MuiTouchRipple-root css-4mb1j7")
-    public WebElement createAccount;
-
-    @FindBy(id = ":r5l:")
-    public WebElement name;
-
-    @FindBy(id = ":r5m:")
-    public WebElement emailOrPhoneNumber;
-
-    @FindBy(id = ":rba:")
-    public WebElement password;
-
-    @FindBy(className = "MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-1s63ceu")
-    public WebElement signUpWithGoogle;
 
 
 
